@@ -41,6 +41,11 @@ class DecodeTests {
     }
 
     @Test
+    public void testZero() {
+        assertEquals(0, Integer.decode("0"));
+    }
+
+    @Test
     public void testWrongSignCharPosition() {
         Throwable throwableWithMinusPlus = assertThrows(NumberFormatException.class, () -> Integer.decode("-+1"));
         Throwable throwableWithDoubleMinus = assertThrows(NumberFormatException.class, () -> Integer.decode("--1"));
